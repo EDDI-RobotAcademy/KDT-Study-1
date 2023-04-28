@@ -6,7 +6,7 @@ import axiosInst from '@/utility/axiosInst'
 
 export default {
     requestBoardListToSpring ({ commit }) {
-        return axiosInst.get('/list')
+        return axiosInst.get('product-problem/list')
             .then((res) => {
                 commit(REQUEST_BOARD_LIST_TO_SPRING, res.data)
             })
