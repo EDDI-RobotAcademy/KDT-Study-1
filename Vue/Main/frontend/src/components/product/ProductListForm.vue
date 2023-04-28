@@ -13,7 +13,14 @@
       </tr>
       <tr v-else v-for="(product, index) in products" :key="index">
         <td align="center">
-          {{ product.name }}
+          <router-link
+            :to="{
+              name: 'ProductReadPage',
+              params: { productId: product.productId.toString() },
+            }"
+          >
+            {{ product.name }}
+          </router-link>
         </td>
         <td align="center">
           {{ product.manufacturer }}
