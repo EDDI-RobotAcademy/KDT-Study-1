@@ -9,6 +9,6 @@ import lombok.ToString;
 @RequiredArgsConstructor
 public class RequestProductModifyForm {
     final private String name;
-    final private String detail;
+    final private String price;
     final private String expireDate;
 }

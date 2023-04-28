@@ -11,11 +11,12 @@ import lombok.ToString;
 public class RequestProductForm {
     final private String name;
     final private String manufacturer;
-    final private String detail;
+    final private String price;
     final private String category;
+    final private String manufacturedDate;
     final private String expireDate;
 
     public Product toProduct() {
-        return new Product(name, manufacturer, detail, category, expireDate);
+        return new Product(name, manufacturer, price, category, expireDate, manufacturedDate);
     }
 }
