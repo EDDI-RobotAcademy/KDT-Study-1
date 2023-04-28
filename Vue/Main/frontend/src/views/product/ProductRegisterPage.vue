@@ -16,15 +16,13 @@ export default {
   name: "ProductRegisterPage",
   methods: {
     ...mapActions(ProductModule, ["requestCreateProductToSpring"]),
-  },
-  async onSubmit(payload) {
-    const product = await this.requestCreateProductToSpring(payload);
-    console.log("typeof(product): " + typeof product);
-    console.log("product: " + JSON.stringify(product));
-    await this.$router.push({
-      name: "ProductReadPage",
-      params: { productId: product.data.productId.toString() },
-    });
+    async onSubmit(payload) {
+      const product = await this.requestCreateProductToSpring(payload);
+      await this.$router.push({
+        name: "ProductReadPage",
+        params: { productId: product.data.productId.toString() },
+      });
+    },
   },
 };
 </script>

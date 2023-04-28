@@ -25,10 +25,24 @@ export default {
       });
   },
   requestCreateProductToSpring({}, payload) {
-    const { product, price, manufacturer, ex_date } = payload;
+    const {
+      name,
+      price,
+      manufacturer,
+      expireDate,
+      manufacturedDate,
+      category,
+    } = payload;
 
     return axiosInst
-      .post("/register", { product, price, manufacturer, ex_date })
+      .post("/register", {
+        name,
+        price,
+        manufacturer,
+        expireDate,
+        manufacturedDate,
+        category,
+      })
       .then((res) => {
         alert("상품 등록 성공!");
         return res;
