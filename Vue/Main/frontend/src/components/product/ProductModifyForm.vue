@@ -63,7 +63,7 @@
 <script>
 export default {
   props: {
-    board: {
+    product: {
       type: Object,
       required: true,
     },

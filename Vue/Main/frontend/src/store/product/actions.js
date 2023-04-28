@@ -5,7 +5,7 @@ import axiosInst from "@/utility/axiosInst";
 
 export default {
   requestProductListToSpring({ commit }) {
-    return axiosInst.get("/list").then((res) => {
+    return axiosInst.get("product-problem/list").then((res) => {
       commit(REQUEST_PRODUCT_LIST_TO_SPRING, res.data);
     });
   },
@@ -35,7 +35,7 @@ export default {
     } = payload;
 
     return axiosInst
-      .post("/register", {
+      .post("product-problem/register", {
         name,
         price,
         manufacturer,
