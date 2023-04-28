@@ -2,6 +2,7 @@ package com.example.demo.productProblem.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.Entity;
@@ -19,10 +20,15 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long productId;
 
+    @Setter
     private String name;
     private String manufacturer;
+
+    @Setter
     private String detail;
     private String category;
+
+    @Setter
     private String expireDate;
 
     public Product(String name, String manufacturer, String detail, String category, String expireDate) {
