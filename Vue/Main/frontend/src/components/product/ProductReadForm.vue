@@ -22,13 +22,13 @@
       <tr>
         <td>제조사</td>
         <td>
-          <input type="text" :value="product.brand" readonly />
+          <input type="text" :value="product.manufacturer" readonly />
         </td>
       </tr>
       <tr>
         <td>제조일자</td>
         <td>
-          <input type="text" :value="product.manufacturer" readonly />
+          <input type="text" :value="product.manufacturedDate" readonly />
         </td>
       </tr>
       <tr>
