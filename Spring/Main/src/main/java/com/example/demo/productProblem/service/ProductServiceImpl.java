@@ -20,4 +20,9 @@ public class ProductServiceImpl implements ProductService{
     public List<Product> list() {
         return productRepository.findAll(Sort.by(Sort.Direction.DESC, "boardId"));
     }
+
+    @Override
+    public Product register(Product product) {
+        return productRepository.save(product);
+    }
 }
