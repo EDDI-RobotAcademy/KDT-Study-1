@@ -1,25 +1,27 @@
 <template lang="">
   <div>
     <h2>상품 게시판</h2>
-    <board-list-form :boards="boards" />
+
+    <product-list-form :products="products" />
   </div>
 </template>
 
 <script>
 import { mapActions, mapState } from "vuex";
-import BoardListForm from "@/components/board/BoardListForm.vue";
-const boardModule = "boardModule";
+
+import ProductListForm from "@/components/product/ProductListForm.vue";
+const productModule = "productModule";
 export default {
-  components: { BoardListForm },
+  components: { ProductListForm },
 
   computed: {
-    ...mapState(boardModule, ["boards"]),
+    ...mapState(productModule, ["products"]),
   },
   mounted() {
-    this.requestBoardListToSpring();
+    this.requestProductListToSpring();
   },
   methods: {
-    ...mapActions(boardModule, ["requestBoardListToSpring"]),
+    ...mapActions(productModule, ["requestProductListToSpring"]),
   },
 };
 </script>
