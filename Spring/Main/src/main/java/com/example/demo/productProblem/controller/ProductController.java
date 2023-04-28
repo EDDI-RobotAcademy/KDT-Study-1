@@ -1,6 +1,7 @@
 package com.example.demo.productProblem.controller;
 
 import com.example.demo.productProblem.controller.form.RequestProductForm;
+import com.example.demo.productProblem.controller.form.RequestProductModifyForm;
 import com.example.demo.productProblem.entity.Product;
 import com.example.demo.productProblem.service.ProductService;
 import lombok.RequiredArgsConstructor;
@@ -43,5 +44,13 @@ public class ProductController {
     @DeleteMapping("/{productId}")
     public void deleteProduct (@PathVariable("productId") Long productId) {
         productService.delete(productId);
+    }
+
+    @PutMapping("/{productId}")
+    public Product modifyProduct(@PathVariable("productId") Long productId,
+                                 @RequestBody RequestProductModifyForm requestProductModifyForm) {
+        log.info("modifyProduct()");
+
+        return productService.modify(requestProductModifyForm, productId);
     }
 }
