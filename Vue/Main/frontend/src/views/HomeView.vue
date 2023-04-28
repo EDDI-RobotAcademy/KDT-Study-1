@@ -1,31 +1,27 @@
 <template lang="">
   <div>
     <h2>상품 게시판</h2>
-    <<<<<<< HEAD
 
-    <board-list-form :products="products" />
-    =======
-    <board-list-form :boards="boards" />
-    >>>>>>> 59bc67e43fd66e439019a5b9d4246f1f046c1679
+    <product-list-form :products="products" />
   </div>
 </template>
 
 <script>
 import { mapActions, mapState } from "vuex";
 
-import BoardListForm from "@/components/board/BoardListForm.vue";
-const boardModule = "boardModule";
+import ProductListForm from "@/components/product/ProductListForm.vue";
+const productModule = "productModule";
 export default {
-  components: { BoardListForm },
+  components: { ProductListForm },
 
   computed: {
-    ...mapState(boardModule, ["boards"]),
+    ...mapState(productModule, ["products"]),
   },
   mounted() {
-    this.requestBoardListToSpring();
+    this.requestProductListToSpring();
   },
   methods: {
-    ...mapActions(boardModule, ["requestBoardListToSpring"]),
+    ...mapActions(productModule, ["requestProductListToSpring"]),
   },
 };
 </script>
