@@ -9,7 +9,7 @@
 <script>
 import { mapActions, mapState } from "vuex";
 
-import ProductListForm from "@/components/board/ProductListForm.vue";
+import ProductListForm from "@/components/product/ProductListForm.vue";
 const productModule = "productModule";
 export default {
   components: { ProductListForm },

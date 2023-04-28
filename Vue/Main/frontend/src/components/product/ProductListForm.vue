@@ -8,21 +8,21 @@
         <th align="center" width="20%">카테고리</th>
         <th align="center" width="40%">유통기한</th>
       </tr>
-      <tr v-if="!boards || (Array.isArray(boards) && boards.length === 0)">
+      <tr v-if="!products || (Array.isArray(products) && products.length === 0)">
         <td colspan="4">등록된 상품이 없습니다</td>
       </tr>
-      <tr v-else v-for="(board, index) in boards" :key="index">
+      <tr v-else v-for="(product, index) in products" :key="index">
         <td align="center">
-          {{ board.name }}
+          {{ product.name }}
         </td>
         <td align="center">
-          {{ board.manufacturer }}
+          {{ product.manufacturer }}
         </td>
         <td align="center">
-          {{ board.category }}
+          {{ product.category }}
         </td>
         <td align="center">
-          {{ board.expireDate }}
+          {{ product.expireDate }}
         </td>
       </tr>
     </table>
@@ -32,7 +32,7 @@
 <script>
 export default {
   props: {
-    boards: {
+    product: {
       type: Array,
     },
   },

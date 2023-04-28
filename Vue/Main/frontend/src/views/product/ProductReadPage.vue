@@ -1,32 +1,32 @@
 <template lang="">
   <div>
     <h2>읽기</h2>
-    <board-read-form v-if="board" :board="board" />
+    <product-read-form v-if="product" :product="product" />
     <p v-else>로딩중 .......</p>
-    <router-link :to="{ name: 'BoardListPage' }"> 돌아가기 </router-link>
+    <router-link :to="{ name: 'ProductListPage' }"> 돌아가기 </router-link>
   </div>
 </template>
 
 <script>
-import ProductReadForm from "@/components/board/ProductReadForm.vue";
+import ProductReadForm from "@/components/product/ProductReadForm.vue";
 import { mapActions, mapState } from "vuex";
-const boardModule = "boardModule";
+const productModule = "productModule";
 export default {
   components: { ProductReadForm },
   props: {
-    boardId: {
+    productId: {
       type: String,
       required: true,
     },
   },
   computed: {
-    ...mapState(boardModule, ["board"]),
+    ...mapState(productModule, ["products"]),
   },
   methods: {
-    ...mapActions(boardModule, ["requestProductToSpring"]),
+    ...mapActions(productModule, ["requestProductToSpring"]),
   },
   created() {
-    this.requestProductToSpring(this.boardId);
+    this.requestProductToSpring(this.productId);
   },
 };
 </script>

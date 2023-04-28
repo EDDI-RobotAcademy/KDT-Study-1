@@ -4,43 +4,43 @@
       <tr>
         <td>상품번호</td>
         <td>
-          <input type="text" :value="board.productId" readonly />
+          <input type="text" :value="product.productId" readonly />
         </td>
       </tr>
       <tr>
         <td>상품명</td>
         <td>
-          <input type="text" :value="board.name" readonly />
+          <input type="text" :value="product.name" readonly />
         </td>
       </tr>
       <tr>
         <td>가격</td>
         <td>
-          <input type="text" :value="board.price" readonly />
+          <input type="text" :value="product.price" readonly />
         </td>
       </tr>
       <tr>
         <td>제조사</td>
         <td>
-          <input type="text" :value="board.brand" readonly />
+          <input type="text" :value="product.brand" readonly />
         </td>
       </tr>
       <tr>
         <td>제조일자</td>
         <td>
-          <input type="text" :value="board.manufacturer" readonly />
+          <input type="text" :value="product.manufacturer" readonly />
         </td>
       </tr>
       <tr>
         <td>유통기한</td>
         <td>
-          <input type="text" :value="board.expireDate" readonly />
+          <input type="text" :value="product.expireDate" readonly />
         </td>
       </tr>
       <tr>
         <td>카테고리</td>
         <td>
-          <input type="text" :value="board.category" readonly />
+          <input type="text" :value="product.category" readonly />
         </td>
       </tr>
     </table>
@@ -51,7 +51,7 @@
 export default {
   name: "ProductReadForm",
   props: {
-    board: {
+    product: {
       type: Object,
       required: true,
     },
