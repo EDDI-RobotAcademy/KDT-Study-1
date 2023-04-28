@@ -8,6 +8,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @Service
@@ -24,5 +25,16 @@ public class ProductServiceImpl implements ProductService{
     @Override
     public Product register(Product product) {
         return productRepository.save(product);
+    }
+
+    @Override
+    public Product view(Long productId) {
+        Optional<Product> maybeProduct = productRepository.findById(productId);
+
+        if (maybeProduct.isEmpty()) {
+            log.info("해당 상품이 없습니다");
+            return null;
+        }
+        return maybeProduct.get();
     }
 }

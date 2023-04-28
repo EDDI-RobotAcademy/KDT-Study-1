@@ -32,4 +32,11 @@ public class ProductController {
 
         return productService.register(requestProductForm.toProduct());
     }
+
+    @GetMapping("/{productId}")
+    public Product viewProduct(@PathVariable("productId") Long productId) {
+        log.info("viewProduct()");
+
+        return productService.view(productId);
+    }
 }
