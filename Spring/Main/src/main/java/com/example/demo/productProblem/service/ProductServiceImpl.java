@@ -20,7 +20,7 @@ public class ProductServiceImpl implements ProductService{
 
     @Override
     public List<Product> list() {
-        return productRepository.findAll(Sort.by(Sort.Direction.DESC, "boardId"));
+        return productRepository.findAll(Sort.by(Sort.Direction.DESC, "productId"));
     }
 
     @Override
