@@ -1,4 +1,3 @@
-ProductRegisterForm.vue
 <template lang="">
   <div>
     <form @submit.prevent="onSubmit">
@@ -13,7 +12,7 @@ ProductRegisterForm.vue
         <tr>
           <td>가격</td>
           <td>
-            <input type="text" v-model="detail" />
+            <input type="text" v-model="price" />
           </td>
         </tr>
 
@@ -30,6 +29,12 @@ ProductRegisterForm.vue
             <input type="text" v-model="expireDate" />
           </td>
         </tr>
+        <tr>
+          <td>제조일자</td>
+          <td>
+            <input type="text" v-model="manufacturedDate" />
+          </td>
+        </tr>
 
         <tr>
           <td>카테고리</td>
@@ -39,7 +44,7 @@ ProductRegisterForm.vue
         </tr>
 
         <div>
-          <button type="text">등록</button>
+          <v-btn color="primary" type="submit">등록</v-btn>
           <button>취소임시버튼</button>
           <!-- <router-link :to="{ name: '리스트페이지로수정' }">
                       취소
@@ -56,21 +61,30 @@ export default {
   data() {
     return {
       name: "상품명",
-      detail: "상세정보",
+      price: "상세정보",
       manufacturer: "제조사",
       expireDate: "유통기한",
       category: "카테고리",
+      manufacturedDate: "제조일자",
     };
   },
   methods: {
     onSubmit() {
-      const { name, detail, manufacturer, expireDate, category } = this;
-      this.$emit("submit", {
+      const {
         name,
-        detail,
+        price,
         manufacturer,
         expireDate,
         category,
+        manufacturedDate,
+      } = this;
+      this.$emit("submit", {
+        name,
+        price,
+        manufacturer,
+        expireDate,
+        category,
+        manufacturedDate,
       });
     },
   },

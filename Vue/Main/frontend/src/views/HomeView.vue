@@ -3,6 +3,9 @@
     <h2>상품 게시판</h2>
 
     <product-list-form :products="products" />
+    <router-link :to="{ name: 'ProductRegisterPage' }">
+      게시물 작성
+    </router-link>
   </div>
 </template>
 

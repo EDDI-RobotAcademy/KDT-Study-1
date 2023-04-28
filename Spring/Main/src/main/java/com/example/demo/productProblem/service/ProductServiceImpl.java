@@ -59,7 +59,7 @@ public class ProductServiceImpl implements ProductService{
 
         Product product = maybeProduct.get();
         product.setName(requestProductModifyForm.getName());
-        product.setDetail(requestProductModifyForm.getDetail());
+        product.setPrice(requestProductModifyForm.getPrice());
         product.setExpireDate(requestProductModifyForm.getExpireDate());
 
         return productRepository.save(product);

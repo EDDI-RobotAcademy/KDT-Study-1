@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import ProductReadPage from "@/views/product/ProductReadPage.vue";
-import ProductRegisterPage from "@/views/ProductRegisterPage.vue";
+import ProductRegisterPage from "@/views/product/ProductRegisterPage.vue";
 
 Vue.use(VueRouter);
 
