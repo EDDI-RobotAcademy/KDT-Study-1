@@ -8,6 +8,7 @@ export default {
       commit(REQUEST_BOARD_LIST_TO_SPRING, res.data);
     });
   },
+
   requestCreateBoardToSpring({}, payload) {
     const { title, content, writer } = payload;
 
@@ -20,5 +21,11 @@ export default {
       .catch(() => {
         alert("문제 발생!");
       });
+
+  requestBoardToSpring({ commit }, boardId) {
+    return axiosInst.get(`/jpa-board/${boardId}`).then((res) => {
+      commit(REQUEST_BOARD_TO_SPRING, res.data);
+    });
+
   },
 };
