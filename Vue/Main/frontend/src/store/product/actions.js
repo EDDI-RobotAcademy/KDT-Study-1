@@ -24,4 +24,17 @@ export default {
         alert("삭제 실패!");
       });
   },
+  requestCreateProductToSpring({}, payload) {
+    const { product, price, manufacturer, ex_date } = payload;
+
+    return axiosInst
+      .post("/register", { product, price, manufacturer, ex_date })
+      .then((res) => {
+        alert("상품 등록 성공!");
+        return res;
+      })
+      .catch(() => {
+        alert("문제 발생!");
+      });
+  },
 };
