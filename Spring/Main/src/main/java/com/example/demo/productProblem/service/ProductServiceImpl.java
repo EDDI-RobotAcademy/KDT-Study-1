@@ -37,4 +37,14 @@ public class ProductServiceImpl implements ProductService{
         }
         return maybeProduct.get();
     }
+
+    @Override
+    public void delete(Long productId) {
+        Optional<Product> maybeProduct = productRepository.findById(productId);
+
+        if (maybeProduct.isEmpty()) {
+            log.info("해당 상품이 없습니다");
+        }
+        productRepository.deleteById(productId);
+    }
 }
