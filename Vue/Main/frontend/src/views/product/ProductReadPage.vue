@@ -3,7 +3,8 @@
     <h2>읽기</h2>
     <product-read-form v-if="product" :product="product" />
     <p v-else>로딩중 .......</p>
-    <router-link :to="{ name: 'ProductListPage' }"> 돌아가기 </router-link>
+    <button @click="onDelete">삭제하기</button><br />
+    <router-link :to="{ name: 'home' }"> 돌아가기 </router-link>
   </div>
 </template>
 
@@ -23,7 +24,14 @@ export default {
     ...mapState(productModule, ["products"]),
   },
   methods: {
-    ...mapActions(productModule, ["requestProductToSpring"]),
+    ...mapActions(productModule, [
+      "requestProductToSpring",
+      "requestDeleteProductToSpring",
+    ]),
+    async onDelete() {
+      await this.requestDeleteProductToSpring(this.productId);
+      await this.$router.push({ name: "home" });
+    },
   },
   created() {
     this.requestProductToSpring(this.productId);

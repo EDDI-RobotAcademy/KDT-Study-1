@@ -14,4 +14,14 @@ export default {
       commit(REQUEST_PRODUCT_TO_SPRING, res.data);
     });
   },
+  requestDeleteProductToSpring({}, productId) {
+    return axiosInst
+      .delete(`product-problem/${productId}`)
+      .then((res) => {
+        alert("삭제 성공!");
+      })
+      .catch(() => {
+        alert("삭제 실패!");
+      });
+  },
 };
