@@ -1,5 +1,6 @@
 package com.example.demo.productProblem.service;
 
+import com.example.demo.productProblem.controller.form.RequestProductModifyForm;
 import com.example.demo.productProblem.entity.Product;
 
 import java.util.List;
@@ -10,4 +11,9 @@ public interface ProductService {
     Product register(Product product);
 
     Product view(Long productId);
+
+    void delete(Long productId);
+
+
+    Product modify(RequestProductModifyForm requestProductModifyForm, Long productId);
 }
