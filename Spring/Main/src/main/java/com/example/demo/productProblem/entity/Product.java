@@ -24,4 +24,12 @@ public class Product {
     private String detail;
     private String category;
     private String expireDate;
+
+    public Product(String name, String manufacturer, String detail, String category, String expireDate) {
+        this.name = name;
+        this.manufacturer = manufacturer;
+        this.detail = detail;
+        this.category = category;
+        this.expireDate = expireDate;
+    }
 }
