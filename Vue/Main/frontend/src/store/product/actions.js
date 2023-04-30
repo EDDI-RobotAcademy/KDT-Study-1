@@ -9,11 +9,17 @@ export default {
       commit(REQUEST_PRODUCT_LIST_TO_SPRING, res.data);
     });
   },
+
   requestProductToSpring({ commit }, productId) {
+    if (!productId) {
+      alert("상품 ID가 유효하지 않습니다.");
+      return;
+    }
     return axiosInst.get(`product-problem/${productId}`).then((res) => {
       commit(REQUEST_PRODUCT_TO_SPRING, res.data);
     });
   },
+
   requestDeleteProductToSpring({}, productId) {
     return axiosInst
       .delete(`product-problem/${productId}`)
@@ -24,6 +30,7 @@ export default {
         alert("삭제 실패!");
       });
   },
+
   requestCreateProductToSpring({}, payload) {
     const {
       name,
@@ -33,7 +40,6 @@ export default {
       manufacturedDate,
       category,
     } = payload;
-
     return axiosInst
       .post("product-problem/register", {
         name,
@@ -51,7 +57,8 @@ export default {
         alert("문제 발생!");
       });
   },
-  requestBoardModifyToSpring({}, payload) {
+
+  requestProductModifyToSpring({}, payload) {
     const {
       name,
       price,

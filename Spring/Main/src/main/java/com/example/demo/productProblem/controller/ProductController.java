@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @Slf4j
 @RestController
@@ -22,7 +23,9 @@ public class ProductController {
         log.info("productList()");
 
         List<Product> returnedProductList = productService.list();
-
+        
+        final UUID uniqueId = UUID.randomUUID();
+        
         return returnedProductList;
     }
 
@@ -32,12 +35,11 @@ public class ProductController {
 
         return productService.register(requestProductForm.toProduct());
     }
-
     @GetMapping("/{productId}")
-    public Product viewProduct(@PathVariable("productId") Long productId) {
+    public Product readProduct(@PathVariable("productId") Long productId) {
         log.info("viewProduct()");
 
-        return productService.view(productId);
+        return productService.read(productId);
     }
 
     @DeleteMapping("/{productId}")
@@ -46,10 +48,10 @@ public class ProductController {
     }
 
     @PutMapping("/{productId}")
-    public Product modifyProduct(@RequestBody RequestProductForm requestProductForm,
-                                 @PathVariable("productId") Long productId) {
+    public Product modifyProduct(@PathVariable("productId") Long productId,
+                                 @RequestBody RequestProductForm requestProductForm) {
         log.info("modifyProduct()");
 
-        return productService.modify(requestProductForm, productId);
+        return productService.modify(productId, requestProductForm);
     }
 }

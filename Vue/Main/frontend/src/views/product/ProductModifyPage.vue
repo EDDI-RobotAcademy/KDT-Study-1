@@ -11,9 +11,7 @@ import ProductModifyForm from "@/components/product/ProductModifyForm.vue";
 import { mapActions, mapState } from "vuex";
 const productModule = "productModule";
 export default {
-  components: {
-    ProductModifyForm,
-  },
+  components: { ProductModifyForm },
   props: {
     productId: {
       type: String,
@@ -35,7 +33,8 @@ export default {
         manufacturer,
         manufacturedDate,
         expireDate,
-        category, } = payload;
+        category,
+      } = payload;
       const productId = this.productId;
       await this.requestProductModifyToSpring({
         name,
