@@ -51,4 +51,30 @@ export default {
         alert("문제 발생!");
       });
   },
+  requestBoardModifyToSpring({}, payload) {
+    const {
+      name,
+      price,
+      manufacturer,
+      manufacturedDate,
+      expireDate,
+      category,
+      productId,
+    } = payload;
+    return axiosInst
+      .put(`/product-problem/${productId}`, {
+        name,
+        price,
+        manufacturer,
+        manufacturedDate,
+        expireDate,
+        category,
+      })
+      .then((res) => {
+        alert("수정 성공!");
+      })
+      .catch(() => {
+        alert("문제 발생!");
+      });
+  },
 };

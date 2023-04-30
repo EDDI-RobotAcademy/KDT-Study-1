@@ -1,6 +1,6 @@
 package com.example.demo.productProblem.service;
 
-import com.example.demo.productProblem.controller.form.RequestProductModifyForm;
+import com.example.demo.productProblem.controller.form.RequestProductForm;
 import com.example.demo.productProblem.entity.Product;
 import com.example.demo.productProblem.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
@@ -41,26 +41,30 @@ public class ProductServiceImpl implements ProductService{
 
     @Override
     public void delete(Long productId) {
-        Optional<Product> maybeProduct = productRepository.findById(productId);
-
-        if (maybeProduct.isEmpty()) {
-            log.info("해당 상품이 없습니다");
-        }
+//        Optional<Product> maybeProduct = productRepository.findById(productId);
+//
+//        if (maybeProduct.isEmpty()) {
+//            log.info("해당 상품이 없습니다");
+//        }
         productRepository.deleteById(productId);
     }
 
     @Override
-    public Product modify(RequestProductModifyForm requestProductModifyForm, Long productId) {
+    public Product modify(RequestProductForm requestProductForm, Long productId) {
         Optional<Product> maybeProduct = productRepository.findById(productId);
 
         if (maybeProduct.isEmpty()) {
             log.info("해당 상품이 없습니다");
+            return null;
         }
 
         Product product = maybeProduct.get();
-        product.setName(requestProductModifyForm.getName());
-        product.setPrice(requestProductModifyForm.getPrice());
-        product.setExpireDate(requestProductModifyForm.getExpireDate());
+        product.setName(requestProductForm.getName());
+        product.setManufacturer(requestProductForm.getManufacturer());
+        product.setPrice(requestProductForm.getPrice());
+        product.setCategory(requestProductForm.getCategory());
+        product.setManufacturedDate(requestProductForm.getManufacturedDate());
+        product.setExpireDate(requestProductForm.getExpireDate());
 
         return productRepository.save(product);
     }

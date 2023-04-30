@@ -17,6 +17,6 @@ public class RequestProductForm {
     final private String expireDate;
 
     public Product toProduct() {
-        return new Product(name, manufacturer, price, category, expireDate, manufacturedDate);
+        return new Product(name, manufacturer, price, category, manufacturedDate, expireDate);
     }
 }

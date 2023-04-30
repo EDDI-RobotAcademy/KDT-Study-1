@@ -7,8 +7,5 @@ import lombok.ToString;
 @Getter
 @ToString
 @RequiredArgsConstructor
-public class RequestProductModifyForm {
-    final private String name;
-    final private String price;
-    final private String expireDate;
+public class ResponseProductListForm {
 }

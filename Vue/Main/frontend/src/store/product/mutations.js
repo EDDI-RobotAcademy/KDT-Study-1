@@ -4,10 +4,10 @@ import {
 } from "./mutation-types";
 
 export default {
-  [REQUEST_PRODUCT_LIST_TO_SPRING](states, receivedData) {
-    states.products = receivedData;
+  [REQUEST_PRODUCT_LIST_TO_SPRING](state, receivedData) {
+    state.products = receivedData;
   },
-  [REQUEST_PRODUCT_TO_SPRING](states, receivedData) {
-    states.product = receivedData;
+  [REQUEST_PRODUCT_TO_SPRING](state, receivedData) {
+    state.product = receivedData;
   },
 };

@@ -45,10 +45,7 @@
 
         <div>
           <v-btn color="primary" type="submit">등록</v-btn>
-          <button>취소임시버튼</button>
-          <!-- <router-link :to="{ name: '리스트페이지로수정' }">
-                      취소
-              </router-link> -->
+          <router-link :to="{ name: 'home' }"> 취소 </router-link>
         </div>
       </table>
     </form>
