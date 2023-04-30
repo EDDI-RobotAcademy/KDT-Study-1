@@ -22,22 +22,23 @@ public class Product {
 
     @Setter
     private String name;
+    @Setter
     private String manufacturer;
-
     @Setter
     private String price;
+    @Setter
     private String category;
+    @Setter
     private String manufacturedDate;
-
     @Setter
     private String expireDate;
 
-    public Product(String name, String manufacturer, String price, String category, String expireDate, String manufacturedDate) {
+    public Product(String name, String manufacturer, String price, String category, String manufacturedDate, String expireDate) {
         this.name = name;
         this.manufacturer = manufacturer;
         this.price = price;
         this.category = category;
-        this.expireDate = expireDate;
         this.manufacturedDate = manufacturedDate;
+        this.expireDate = expireDate;
     }
 }

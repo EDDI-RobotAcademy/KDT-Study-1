@@ -3,6 +3,9 @@
     <h2>읽기</h2>
     <product-read-form v-if="product" :product="product" />
     <p v-else>로딩중 .......</p>
+    <router-link :to="{ name: 'ProductModifyPage', params: { productId } }">
+      상품 정보 수정
+    </router-link>
     <button @click="onDelete">삭제하기</button><br />
     <router-link :to="{ name: 'home' }"> 돌아가기 </router-link>
     <router-link :to="{ name: 'ProductModifyPage', params: { productId }}">

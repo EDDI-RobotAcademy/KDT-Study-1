@@ -29,7 +29,8 @@ export default {
       "requestProductModifyToSpring",
     ]),
     async onSubmit(payload) {
-      const { name,
+      const {
+        name,
         price,
         manufacturer,
         manufacturedDate,

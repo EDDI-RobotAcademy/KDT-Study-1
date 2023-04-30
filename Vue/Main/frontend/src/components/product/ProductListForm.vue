@@ -15,7 +15,7 @@
       >
         <td colspan="5">등록된 상품이 없습니다</td>
       </tr>
-      <tr v-else v-for="(product, index) in products" :key="index">
+      <tr v-else v-for="product in products" :key="product.productId">
         <td align="center">
           {{ product.productId }}
         </td>
