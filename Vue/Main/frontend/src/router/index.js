@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import ProductReadPage from "@/views/product/ProductReadPage.vue";
 import ProductRegisterPage from "@/views/product/ProductRegisterPage.vue";
+import ProductModifyPage from "@/views/product/ProductModifyPage.vue";
 
 Vue.use(VueRouter);
 
@@ -22,14 +23,29 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   },
   {
-    path: "/product-read-page",
-    name: "ProductReadPage",
-    component: ProductReadPage,
-  },
-  {
     path: "/product-register-page",
     name: "ProductRegisterPage",
     component: ProductRegisterPage,
+  },
+  {
+    path: "/product-read-page/:productId",
+    name: "ProductReadPage",
+    components: {
+      default: ProductReadPage,
+    },
+    props: {
+      default: true,
+    },
+  },
+  {
+    path: "/product-modify-page/:productId",
+    name: "ProductModifyPage",
+    components: {
+      default: ProductModifyPage,
+    },
+    props: {
+      default: true,
+    },
   },
 ];
 

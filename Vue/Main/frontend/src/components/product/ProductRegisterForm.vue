@@ -8,21 +8,18 @@
             <input type="text" v-model="name" />
           </td>
         </tr>
-
         <tr>
           <td>가격</td>
           <td>
             <input type="text" v-model="price" />
           </td>
         </tr>
-
         <tr>
           <td>제조사</td>
           <td>
             <input type="text" v-model="manufacturer" />
           </td>
         </tr>
-
         <tr>
           <td>유통기한</td>
           <td>
@@ -35,19 +32,17 @@
             <input type="text" v-model="manufacturedDate" />
           </td>
         </tr>
-
         <tr>
           <td>카테고리</td>
           <td>
             <input type="text" v-model="category" />
           </td>
         </tr>
-
-        <div>
-          <v-btn color="primary" type="submit">등록</v-btn>
-          <router-link :to="{ name: 'home' }"> 취소 </router-link>
-        </div>
       </table>
+      <div>
+        <v-btn color="primary" type="submit">등록</v-btn>
+        <router-link :to="{ name: 'home' }"> 취소 </router-link>
+      </div>
     </form>
   </div>
 </template>
@@ -60,9 +55,9 @@ export default {
       name: "상품명",
       price: "상세정보",
       manufacturer: "제조사",
+      manufacturedDate: "제조일자",
       expireDate: "유통기한",
       category: "카테고리",
-      manufacturedDate: "제조일자",
     };
   },
   methods: {
@@ -71,17 +66,17 @@ export default {
         name,
         price,
         manufacturer,
+        manufacturedDate,
         expireDate,
         category,
-        manufacturedDate,
       } = this;
       this.$emit("submit", {
         name,
         price,
         manufacturer,
+        manufacturedDate,
         expireDate,
         category,
-        manufacturedDate,
       });
     },
   },
