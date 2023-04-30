@@ -1,7 +1,7 @@
 <template lang="">
   <div>
     <h2>상품 수정</h2>
-    <board-modify-form v-if="product" :product="product" @submit="onSubmit" />
+    <product-modify-form v-if="product" :product="product" @submit="onSubmit" />
     <p v-else>로딩중 .......</p>
   </div>
 </template>
@@ -35,8 +35,7 @@ export default {
         manufacturer,
         manufacturedDate,
         expireDate,
-        category,
-      } = payload;
+        category, } = payload;
       const productId = this.productId;
       await this.requestProductModifyToSpring({
         name,

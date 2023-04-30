@@ -8,6 +8,9 @@
     </router-link>
     <button @click="onDelete">삭제하기</button><br />
     <router-link :to="{ name: 'home' }"> 돌아가기 </router-link>
+    <router-link :to="{ name: 'ProductModifyPage', params: { productId }}">
+    수정하기
+    </router-link>
   </div>
 </template>
 
