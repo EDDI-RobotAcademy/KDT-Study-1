@@ -29,7 +29,7 @@ public class ProductServiceImpl implements ProductService{
     }
 
     @Override
-    public Product view(Long productId) {
+    public Product read(Long productId) {
         Optional<Product> maybeProduct = productRepository.findById(productId);
 
         if (maybeProduct.isEmpty()) {
@@ -50,7 +50,7 @@ public class ProductServiceImpl implements ProductService{
     }
 
     @Override
-    public Product modify(RequestProductForm requestProductForm, Long productId) {
+    public Product modify(Long productId, RequestProductForm requestProductForm) {
         Optional<Product> maybeProduct = productRepository.findById(productId);
 
         if (maybeProduct.isEmpty()) {

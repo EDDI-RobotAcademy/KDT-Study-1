@@ -47,7 +47,7 @@
       </table>
 
       <div>
-        <button type="submit">수정 완료</button>
+        <v-btn type="submit">수정 완료</v-btn>
         <router-link
           :to="{
             name: 'ProductReadPage',

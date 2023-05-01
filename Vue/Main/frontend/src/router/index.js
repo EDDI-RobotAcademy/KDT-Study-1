@@ -23,6 +23,11 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   },
   {
+    path: "/product-register-page",
+    name: "ProductRegisterPage",
+    component: ProductRegisterPage,
+  },
+  {
     path: "/product-read-page/:productId",
     name: "ProductReadPage",
     components: {
@@ -41,11 +46,6 @@ const routes = [
     props: {
       default: true,
     },
-  },
-  {
-    path: "/product-register-page",
-    name: "ProductRegisterPage",
-    component: ProductRegisterPage,
   },
 ];
 

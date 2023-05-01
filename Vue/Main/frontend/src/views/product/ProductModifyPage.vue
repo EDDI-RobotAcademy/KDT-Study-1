@@ -11,9 +11,7 @@ import ProductModifyForm from "@/components/product/ProductModifyForm.vue";
 import { mapActions, mapState } from "vuex";
 const productModule = "productModule";
 export default {
-  components: {
-    ProductModifyForm,
-  },
+  components: { ProductModifyForm },
   props: {
     productId: {
       type: String,

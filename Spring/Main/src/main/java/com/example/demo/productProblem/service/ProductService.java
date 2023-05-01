@@ -10,9 +10,9 @@ public interface ProductService {
 
     Product register(Product product);
 
-    Product view(Long productId);
+    Product read(Long productId);
 
     void delete(Long productId);
 
-    Product modify(RequestProductForm requestProductForm, Long productId);
+    Product modify(Long productId, RequestProductForm requestProductForm);
 }
