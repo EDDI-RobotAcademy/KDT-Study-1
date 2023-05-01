@@ -35,7 +35,8 @@ export default {
         manufacturer,
         manufacturedDate,
         expireDate,
-        category, } = payload;
+        category,
+      } = payload;
       const productId = this.productId;
       await this.requestProductModifyToSpring({
         name,

@@ -51,7 +51,7 @@ export default {
         alert("문제 발생!");
       });
   },
-  requestBoardModifyToSpring({}, payload) {
+  requestProductModifyToSpring({}, payload) {
     const {
       name,
       price,
